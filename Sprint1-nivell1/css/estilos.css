@@ -1,0 +1,93 @@
+*{
+    margin: 10px;
+    padding: 10px;
+}
+body{
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 1200px;
+}
+
+
+header{
+    background-color: black;
+    display: flex;
+    flex-flow: column nowrap;
+}
+    .menu{
+        background-color:#142F43 ;
+        display: flex;
+    }
+        .logo{
+            background-color:#EF4F4F ;
+            flex: 1 1 auto;
+        }
+        .nav{
+            background-color: #EF4F4F;
+            flex: 6 1 auto;
+        }
+        .social{
+            background-color: #EF4F4F;
+            flex: 1 1 auto;
+        }
+
+    .texto-cabecera{
+        background-color: #FF7600;
+    }
+        h1{
+            background-color:#FFC93C ;
+        }
+
+
+section{
+    background-color: black;
+    display: flex;
+}
+    .articulos{
+        background-color: #4B778D;
+        display: flex;
+        flex: 2 1 auto;
+        flex-flow: row wrap;
+    }
+        .articulo{
+            background-color: #28B5B5;
+            flex: 2 1 45%;
+        }
+        .parrafo-final{
+            background-color:#8FD9A8 ;
+            flex: 1 1 100%;
+        }
+
+
+    aside{
+        background-color: #EF4F4F;
+        flex: 1 1 auto;
+    }
+        h3{
+            background-color: #F9F871;
+        }
+        p{
+            background-color: #F9F871;
+        }
+
+footer{
+    background-color: black;
+}
+    .pie-pagina{
+        background-color: #FFC75F;
+    }
+
+
+@media all and (max-width: 768px){
+    section{
+        flex-direction: column;
+    }
+}
+@media all and (max-width: 470px){
+    .menu{
+        flex-direction: column;
+    }
+    .articulos{
+        flex-direction: column;
+    }
+}
