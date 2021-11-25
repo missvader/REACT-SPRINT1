@@ -1,6 +1,6 @@
 *{
-    margin: 0.2rem; 
-    padding: 0.2rem; 
+    margin: 0; 
+    padding: 0; 
     box-sizing: border-box;
 } 
     body{
@@ -8,14 +8,12 @@
         max-width: 1200px;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         margin: auto;
-        grid-template-areas: 
-        "header"
-        "section"
-        "footer";
+        grid-template-columns: 1f 1fr 1fr;
+        grid-gap: 1rem;
     }
 
     
-     .header{
+    header{
         background:url('../images/header.jpg');
         background-position: center;
         background-attachment:scroll;
@@ -23,33 +21,36 @@
         display: grid;
         height: 250px;
         position: relative;
-        grid-area: header;
-        grid-template-areas: 
+        /*grid-template-areas: 
         "menu menu menu menu"
-        "texto-cabecera texto-cabecera texto-cabecera texto-cabecera";
+        "texto-cabecera texto-cabecera texto-cabecera texto-cabecera";*/
+        grid-template-columns: 1fr ;
         
         
     }
         .menu{
            
             display: grid;
-            grid-area: menu;
+            /*grid-area: menu;
             grid-template-areas: 
-            "logo nav nav nav social";
+            "logo nav nav nav social";*/
+            grid-template-columns: 1fr 3fr 1fr;
         }
             .logo{
                 display: grid;
-                grid-area: logo;
+                /*grid-area: logo;*/
                 max-width: 80px;
                 animation: animacion-logo 2s ease-in;
-                
+                justify-self: left;
             }
                 
             .nav{
                 display: grid;
-                grid-area: nav;
+                /*grid-area: nav;*/
                 grid-template-areas: 
                 "inicio rutas hoteles vuelos contacto";
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+                margin-top: 1rem;
             }
                 .nav a{
                     color: gray;
@@ -83,9 +84,12 @@
                     }
             .social{
                 display: grid;
-                grid-area: social;
+                margin-top: 1rem;
                 grid-template-areas: 
-                ". . . facebook twitter";
+                ". . . facebook  . twitter";
+                grid-template-columns: 1fr;
+                
+                
             }
                 .social a{
                     color: gray;
@@ -137,16 +141,21 @@
         .articulos{
             background: #DDDDDD;
             display:grid;
-            grid-area: articulos;
+           /* grid-area: articulos;
             grid-template-areas: 
             "article1 article2"
             "article3 article4"
+            "p-finalsection p-finalsection";*/
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+            "article article"
+            "article article"
             "p-finalsection p-finalsection";
         }
             article{
                 background: #F7F6F2;
-               
-                
+                display: grid;
+                grid-area: article;
                 
             }
             .article1{
@@ -284,21 +293,36 @@
 }
 @media all and (max-width: 470px){
     
-    .menu{
+    menu{
         grid-template-areas: 
         "logo"
         "nav"
         "social"
         "."
-        ".";
+        "." ;
+    }
+    section{
+        grid-template-areas: 
+        "articulos"
+        "articulos"
+        "articulos"
+        "articulos"
+        "aside";
     }
     .articulos{
         grid-template-areas: 
-        "article1"
-        "article2"
-        "article3"
-        "article4";
+        "article1 "
+        "article2 "
+        "article3 "
+        "article4 "
+        "p-finalsection";
+        
     }
+    h1{
+        justify-self: center;
+    }
+    
+    
     .logo{
         max-width: 50px;
         justify-self: center;
