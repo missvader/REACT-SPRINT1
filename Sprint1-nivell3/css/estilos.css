@@ -1,6 +1,6 @@
 *{
-    margin: 0; 
-    padding: 0; 
+    margin: 0.2rem; 
+    padding: 0.2rem; 
     box-sizing: border-box;
 } 
     body{
@@ -8,37 +8,27 @@
         max-width: 1200px;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         margin: auto;
-        grid-template-columns: 1f 1fr 1fr;
-        grid-gap: 1rem;
+        grid-template-columns: 1fr;
     }
 
     
-    header{
+     .header{
         background:url('../images/header.jpg');
         background-position: center;
         background-attachment:scroll;
         background-size: cover;
-        display: grid;
         height: 250px;
         position: relative;
-        /*grid-template-areas: 
-        "menu menu menu menu"
-        "texto-cabecera texto-cabecera texto-cabecera texto-cabecera";*/
-        grid-template-columns: 1fr ;
-        
+        display: grid;
+        grid-template-columns: 1fr;
         
     }
         .menu{
-           
             display: grid;
-            /*grid-area: menu;
-            grid-template-areas: 
-            "logo nav nav nav social";*/
-            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-columns: 1fr 8fr 1fr;
         }
             .logo{
                 display: grid;
-                /*grid-area: logo;*/
                 max-width: 80px;
                 animation: animacion-logo 2s ease-in;
                 justify-self: left;
@@ -46,11 +36,9 @@
                 
             .nav{
                 display: grid;
-                /*grid-area: nav;*/
-                grid-template-areas: 
-                "inicio rutas hoteles vuelos contacto";
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
-                margin-top: 1rem;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                justify-content: space-around;
+                max-height: 15px;
             }
                 .nav a{
                     color: gray;
@@ -67,29 +55,10 @@
                     -webkit-transform:  scale(0.5);
                     transform: scale(1.5);
                 }
-                    .inicio{
-                        grid-area: inicio;
-                    }
-                    .rutas{
-                        grid-area: rutas;
-                    }
-                    .hoteles{
-                        grid-area: hoteles;
-                    }
-                    .vuelos{
-                        grid-area: vuelos;
-                    }
-                    .contacto{
-                        grid-area: contacto;
-                    }
             .social{
                 display: grid;
-                margin-top: 1rem;
-                grid-template-areas: 
-                ". . . facebook  . twitter";
-                grid-template-columns: 1fr;
-                
-                
+                grid-template-columns: 1fr 1fr;
+                justify-content: flex-end;
             }
                 .social a{
                     color: gray;
@@ -104,117 +73,69 @@
                     -webkit-transform:  scale(1);
                     transform: scale(1.5);
                 }
-                .facebook{
-                    grid-area: facebook;
-                }
-                .twitter{
-                    grid-area: twitter;
-                }
         .texto-cabecera{
-            display: grid;
-            grid-area: texto-cabecera;
             background-color: rgba(133, 132, 131, 0.2);
             width: 80% ;
             height: 6rem;
             align-self:center;
             position: absolute;
             bottom: 0;
+            display: grid;
             justify-self: center;
-            grid-template-areas: 
-            ". . h1 h1 h1 ..";
+            
         }   
             h1{
                 color: rgba(233, 136, 79, 0.8);
+                text-align: center;
                 font-size: 1.5rem;
+                align-items: center;
                 margin-top: 1rem;
                 animation: animacion-titulo 2s ease-in;
-                grid-area: h1;
                 justify-self: center;
+                display: grid;
             } 
     .section{
         background: white;
         display: grid;
-        grid-area: section;
-        grid-template-areas: 
-        "articulos articulos articulos articulos aside";
+        grid-template-columns: 3fr 1fr;
     }
         .articulos{
             background: #DDDDDD;
-            display:grid;
-           /* grid-area: articulos;
-            grid-template-areas: 
-            "article1 article2"
-            "article3 article4"
-            "p-finalsection p-finalsection";*/
+            display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-areas: 
-            "article article"
-            "article article"
-            "p-finalsection p-finalsection";
+            
         }
-            article{
+            .article{
                 background: #F7F6F2;
+                /*display: flex;
+                flex-flow:column;
+                flex: 2 1 45%;*/
                 display: grid;
-                grid-area: article;
+
                 
-            }
-            .article1{
-                grid-area: article1;
-                grid-template-areas: 
-                "foto"
-                "titulo-articulo"
-                "p-articulo"
-                "."
-                "leermas";
-            }
-            .article2{
-                grid-area: article2;
-                grid-template-areas: 
-                "foto"
-                "titulo-articulo"
-                "p-articulo"
-                "."
-                "leermas";
-                
-            }
-            .article3{
-                grid-area: article3;
-                grid-template-areas: 
-                "foto"
-                "titulo-articulo"
-                "p-articulo"
-                "."
-                "leermas";
-            }
-            .article4{
-                grid-area: article4;
-                grid-template-areas: 
-                "foto"
-                "titulo-articulo"
-                "p-articulo"
-                "."
-                "leermas";
             }
                 .foto{
                     position: relative;
-                    max-height: 426px;
+                    /*display: inline-block;*/
+                    text-align: end;
                     display: grid;
-                    grid-area: foto;
+                    max-height: 426px;
+                    
                     
                 }
-               
+                
                     img{
                         width: 100%;
-                        display: block;
+                        /*display: block;*/
                         margin-left: 0;
                         padding-left: 0;
                         padding-right: 0;
-                        object-fit: cover;
+                        /*object-fit: cover;*/
 
                     }
                     .fecha{
                         position: absolute;
-                        bottom: 0;
+                        bottom: 1rem;
                         left: 1rem;
                         color: yellow;
                     }
@@ -225,107 +146,85 @@
                     font-size: 1.5rem;
                     padding-bottom: 0rem;
                     padding-top: 1rem;
-                    margin-top: 0.6rem;
-                    grid-area: titulo-articulo;
+                    margin-top: 0.5rem;
                 }
-                .p-article{
+                .cultura{
+                    background: #FE8F8F;
+                    color: white;
+                    font-size: 1.5rem;
+                    padding-bottom: 0rem;
+                    padding-top: 1rem;
+                    max-height: 48px;
+                }
+                .article p{
                     color: gray;
                     background: #F7F6F2;
-                    grid-area: p-articulo;
                 }
-                .leermas{
+                .article a{
                     color: gray;
                     text-decoration: none;
-                    grid-area: leermas;
                                         
                 }
                
             .parrafo{
                 background: #DDDDDD;
-                grid-area: p-finalsection;
+                display: grid;
+                grid-column: 1 / 3;
+                
             }
         .aside{
             background: #DDDDDD;
-            grid-area: aside;
-            grid-template-areas: 
-            "titulo-aside"
-            "p-aside";
+            display: grid;
+            grid-template-rows: 1fr 20fr ;
+            justify-items: center;
+            text-align: center;
             
-
         }
-            .titulo-aside{
+            h2{
                 background: #DDDDDD;
-                grid-area: h3;
-                text-align: center;
-                font-size: 1.5rem;
-                margin: 20px;
+                
                 
             }
             p{
-                display: grid;
                 background: #DDDDDD;
-                grid-area: p-aside;
-                text-align:center;
             }
     .footer{
         background: #DDDDDD;
-        display: grid;
-        grid-area: footer;
-        grid-template-areas: 
-        "pie-pagina";
     }
         .pie-pagina{
             background: #F7F6F2;
             color: gray;
-            grid-area: pie-pagina;  
-            width:95%;
-            justify-self: center;  
-            text-align: center;        
+            text-align: center;
+            
         }
 @media all and (max-width: 768px){
-    .section{
-        grid-template-areas: 
-        "articulos"
-        "articulos"
-        "articulos"
-        "aside";
+    .articulos, .aside{
+        grid-column: 1 / 4 ;
     }
+    .aside{
+        grid-template-rows: 1fr 2fr;
+    }
+   
 }
 @media all and (max-width: 470px){
-    
-    menu{
-        grid-template-areas: 
-        "logo"
-        "nav"
-        "social"
-        "."
-        "." ;
+    .header{
+        grid-template-rows: 1fr 10fr;
     }
-    section{
-        grid-template-areas: 
-        "articulos"
-        "articulos"
-        "articulos"
-        "articulos"
-        "aside";
+    .menu{
+        grid-template-rows: 1fr 1fr 1fr;
     }
-    .articulos{
-        grid-template-areas: 
-        "article1 "
-        "article2 "
-        "article3 "
-        "article4 "
-        "p-finalsection";
+    .logo, .nav, .social{
+        grid-column: 1 / 4;
         
+    }
+    .logo{
+        max-width: 2rem;
+        justify-self: center;
+        vertical-align: top;
     }
     h1{
         justify-self: center;
-    }
-    
-    
-    .logo{
-        max-width: 50px;
-        justify-self: center;
+        font-size: 1rem;
     }
 }
 @keyframes animacion-logo{
